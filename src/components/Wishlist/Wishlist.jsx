@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useWishList } from "../../Provider/WishlistProvider";
-import "./WishList.css";
+import "./Wishlist.css";
 // import { NavLink } from "react-router-dom";
 // import AddToCart from "../Cart/AddToCart/AddToCart";
 import Footer from "../Footer/Footer";
