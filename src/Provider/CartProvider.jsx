@@ -18,7 +18,7 @@ const CartProvider = ({ children }) => {
         },
       });
       const data = await response.json();
-      setCartData(data.data.items);
+      setCartData(data?.data?.items);
       setCartNumber(data.results);
       setCartTotal(data.data.totalPrice);
     } catch (error) {
