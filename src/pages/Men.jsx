@@ -5,7 +5,6 @@ import { getHeaderWithProjectId } from "../utils/configs";
 import ProductCard from "../components/products/ProductCard";
 import ProductsProvider from "../Provider/ProductsProvider";
 import Footer from "../components/Footer/Footer";
-// import Filters from "../components/Filters";
 import { useNavigate } from "react-router-dom"; 
 
 const MenProductsList = ({product_for }) => {
@@ -17,7 +16,7 @@ const MenProductsList = ({product_for }) => {
         category: false,
     });
 
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate(); 
 
     useEffect(() => {
         setIsLoading(false);

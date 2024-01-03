@@ -130,10 +130,6 @@
   .profile-p{
     font-weight: 600;
   }
-  /* .carousel{
-    width: 100px;
-    height: 50%;
-  } */
 
   @media screen and (max-width: 400px) {
     .navbar {

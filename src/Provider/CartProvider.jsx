@@ -9,7 +9,6 @@ const CartProvider = ({ children }) => {
   const [cartNumber, setCartNumber] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
 
-
   const getCartData = async () => {
     try {
       const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/cart`, {
@@ -49,7 +48,6 @@ const CartProvider = ({ children }) => {
 
   const deleteAnItemFromCart = async (productId) => {
     try {
-      // Send DELETE request to the server to delete the item from the cart
       const response = await fetch(`${apiUrl}ecommerce/cart/${productId}`, {
         method: "DELETE",
         headers: {
@@ -57,9 +55,9 @@ const CartProvider = ({ children }) => {
           Authorization: `Bearer ${authToken}`,
         },
       });
-      // console.log(await response.json());
+
       const data = await response.json();
-      // console.log(await response.json());
+
       console.log(data.data);
 
       setCartData(data.data.items);

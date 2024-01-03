@@ -41,25 +41,9 @@ const WishListProvider = ({ children }) => {
     }
   };
 
-//   const getWishListItems = async () => {
-//     try {
-//       const response = await fetch(`${apiUrl}ecommerce/wishlist`, {
-//         headers: {
-//           projectID: projectId,
-//           Authorization: `Bearer ${bearerToken}`,
-//         },
-//       });
-//       const jsonData = await response.json();
-//       setWishListNumber(jsonData.results);
-//       setWishList(jsonData?.data?.items);
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
-
 const getWishListItems = async () => {
     try {
-      const delay = 1000; // 1 second delay (adjust as needed)
+      const delay = 1000; 
       await new Promise(resolve => setTimeout(resolve, delay)); // Introduce delay
   
       const response = await fetch(`${apiUrl}ecommerce/wishlist`, {

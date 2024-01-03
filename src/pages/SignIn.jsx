@@ -42,7 +42,7 @@ function SignIn() {
                 console.error("SignIn Failed");
             }
         } catch (error) {
-            console.error("SignIn failed", error); // Log the actual error for debugging
+            console.error("SignIn failed", error);
         }
     }
 

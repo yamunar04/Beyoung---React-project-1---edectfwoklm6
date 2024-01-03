@@ -9,7 +9,7 @@ import { useUser } from "../../Provider/UserProvider";
 import { NavLink } from "react-router-dom";
 
 function SingleProduct() {
-  const { cartData, addToCart } = useCartContext();
+  // const { cartData, addToCart } = useCartContext();
   const { addToWishList, wishList } = useWishList();
   const [product, setProduct] = useState([]);
   const [mainImage, setMainImage] = useState(0);
@@ -69,7 +69,7 @@ function SingleProduct() {
           <AddToCart product={product} />
           
           <div className="cart-wishlist-btns">
-          <NavLink to={isUserLoggedIn ? "/wishlist" : "/signin"}>
+          <NavLink to={isUserLoggedIn ? "/products/:_id" : "/signin"}>
             <button
               className="single-product-add-to-wishlist-btn"
               onClick={() => addToWishList(_id)}

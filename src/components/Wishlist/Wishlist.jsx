@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useWishList } from "../../Provider/WishlistProvider";
 import "./Wishlist.css";
-// import { NavLink } from "react-router-dom";
-// import AddToCart from "../Cart/AddToCart/AddToCart";
 import Footer from "../Footer/Footer";
-
 
 export default function Wishlist() {
   const {
@@ -33,12 +30,6 @@ export default function Wishlist() {
                 <h5>₹{item.products.price}</h5>
               </div>
               <div className="wishlist-buttons-div">
-                {/* <NavLink to={`/single-product/${item.products._id}`}>
-                  <button className="wishlist-delete">                  
-                    Add to cart
-                  </button>
-                </NavLink> */}
-                {/* <AddToCart product={product} /> */}
 
                 <button
                   className="wishlist-delete"
