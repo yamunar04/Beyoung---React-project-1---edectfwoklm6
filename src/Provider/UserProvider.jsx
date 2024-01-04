@@ -3,7 +3,7 @@ import React, {createContext, useContext, useState} from "react";
 const UserContext = createContext();
 
 function UserProvider({children}){
-
+    const [authTokenData, setAuthTokenData] = useState(null);
     const [user, setUser] = useState(null);
 
     const setUserContext = (userData) => {
@@ -13,7 +13,9 @@ function UserProvider({children}){
     const value = {
         user,
         setUserContext,
-        isUserLoggedIn
+        isUserLoggedIn,
+        authTokenData,
+        setAuthTokenData,
     };
 
     return (

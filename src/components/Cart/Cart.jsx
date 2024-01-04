@@ -4,6 +4,7 @@ import "./Cart.css";
 import { NavLink } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { useNavigate } from "react-router-dom";
+import {useUser} from "../../Provider/UserProvider";
 
 function Cart(_id) {
   const {
@@ -13,13 +14,19 @@ function Cart(_id) {
     deleteAnItemFromCart,
     authToken,
   } = useCartContext();
+
+  const {
+    authTokenData,
+    setAuthTokenData
+  } = useUser();
+
   const navigate = useNavigate();
   const handleCheckOutClick = () => {
     navigate(`/checkout`);
   };
   useEffect(() => {
     getCartData();
-  }, [authToken]);
+  }, [authTokenData]);
 
   return (
     <>

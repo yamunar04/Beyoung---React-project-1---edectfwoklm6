@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../Provider/UserProvider";
 
 function SignUp() {
-    const { setUserContext: signUpContext } = useUser();
+    const { setUserContext: signUpContext, authTokenData, setAuthTokenData } = useUser();
     const navigate = useNavigate();
     const [userInfo, setUserInfo] = useState({
         name: '',
@@ -36,6 +36,7 @@ function SignUp() {
 
                 sessionStorage.setItem('authToken', token);
                 sessionStorage.setItem('userInfo', JSON.stringify({ name })); 
+                setAuthTokenData(token);
 
                 signUpContext(token);
                 navigate('/');

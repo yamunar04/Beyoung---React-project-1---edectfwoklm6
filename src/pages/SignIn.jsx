@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../Provider/UserProvider";
 
 function SignIn() {
-    const { setUserContext: signInContext } = useUser();
+    const { setUserContext: signInContext, authTokenData, setAuthTokenData } = useUser();
     const navigate = useNavigate();
     const [userInfo, setUserInfo] = useState({
         email: '',
@@ -35,6 +35,7 @@ function SignIn() {
 
                 sessionStorage.setItem('authToken', token);
                 sessionStorage.setItem('userInfo', JSON.stringify({ name }));
+                setAuthTokenData(token);
 
                 signInContext(token);
                 navigate('/');

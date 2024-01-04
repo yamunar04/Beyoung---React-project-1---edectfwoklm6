@@ -5,6 +5,7 @@ const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   const authToken = sessionStorage.getItem("authToken");
+  
   const [cartData, setCartData] = useState(null);
   const [cartNumber, setCartNumber] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
@@ -22,6 +23,7 @@ const CartProvider = ({ children }) => {
       setCartData(data?.data?.items);
       setCartNumber(data?.results);
       setCartTotal(data?.data?.totalPrice);
+      
     } catch (error) {
       console.log("Error fetching cart", error);
     }
