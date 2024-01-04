@@ -11,6 +11,7 @@ function Cart(_id) {
     cartTotal,
     getCartData,
     deleteAnItemFromCart,
+    authToken,
   } = useCartContext();
   const navigate = useNavigate();
   const handleCheckOutClick = () => {
@@ -18,7 +19,7 @@ function Cart(_id) {
   };
   useEffect(() => {
     getCartData();
-  }, []);
+  }, [authToken]);
 
   return (
     <>

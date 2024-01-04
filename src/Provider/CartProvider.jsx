@@ -18,6 +18,7 @@ const CartProvider = ({ children }) => {
         },
       });
       const data = await response.json();
+      console.log(data);
       setCartData(data?.data?.items);
       setCartNumber(data?.results);
       setCartTotal(data?.data?.totalPrice);
@@ -40,6 +41,8 @@ const CartProvider = ({ children }) => {
           size: size,
         }),
       });
+      const data = await response.json();
+      console.log(data);
     } catch (error) {
       console.log("Error adding product into cart", error);
     }
@@ -74,6 +77,7 @@ const CartProvider = ({ children }) => {
     addToCart,
     getCartData,
     deleteAnItemFromCart,
+    authToken,
   };
 
   return (
