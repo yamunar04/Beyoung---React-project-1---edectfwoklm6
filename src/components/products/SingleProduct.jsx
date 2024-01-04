@@ -69,7 +69,8 @@ function SingleProduct() {
           <AddToCart product={product} />
           
           <div className="cart-wishlist-btns">
-          <NavLink to={isUserLoggedIn ? "/products/:_id" : "/signin"}>
+          {/* <NavLink to={isUserLoggedIn ? "/products/:_id" : "/signin"}> */}
+          <NavLink to= {!isUserLoggedIn && "/signin"}>
             <button
               className="single-product-add-to-wishlist-btn"
               onClick={() => addToWishList(_id)}

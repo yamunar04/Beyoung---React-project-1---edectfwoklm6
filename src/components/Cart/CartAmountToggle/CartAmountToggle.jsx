@@ -21,7 +21,8 @@ export default function CartAmountToggle({
           <FaPlus />
         </button>
       </div>
-      <NavLink to={isUserLoggedIn ? "/products/:_id" : "/signin"}>
+      {/* <NavLink to={isUserLoggedIn ? "/products/:_id" : "/signin"}> */}
+      <NavLink to= {!isUserLoggedIn && "/signin"}>
         <button className="addtocart-btn" onClick={handleAddToCartClick}>
           add to cart
         </button>
