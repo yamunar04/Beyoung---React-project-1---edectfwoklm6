@@ -1,15 +1,13 @@
 import "./SingleProduct.css";
-import { projectId, apiUrl } from "../../helper/apiDetails";
+import { projectId } from "../../helper/apiDetails";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useCartContext } from "../../Provider/CartProvider";
 import AddToCart from "../Cart/AddToCart/AddToCart";
 import { useWishList } from "../../Provider/WishlistProvider";
 import { useUser } from "../../Provider/UserProvider";
 import { NavLink } from "react-router-dom";
 
 function SingleProduct() {
-  // const { cartData, addToCart } = useCartContext();
   const { addToWishList, wishList } = useWishList();
   const [product, setProduct] = useState([]);
   const [mainImage, setMainImage] = useState(0);
@@ -27,7 +25,6 @@ function SingleProduct() {
     getProduct();
   }, []);
   const {
-    // _id,
     images = [""],
     name,
     brand,
@@ -69,7 +66,6 @@ function SingleProduct() {
           <AddToCart product={product} />
           
           <div className="cart-wishlist-btns">
-          {/* <NavLink to={isUserLoggedIn ? "/products/:_id" : "/signin"}> */}
           <NavLink to= {!isUserLoggedIn && "/signin"}>
             <button
               className="single-product-add-to-wishlist-btn"

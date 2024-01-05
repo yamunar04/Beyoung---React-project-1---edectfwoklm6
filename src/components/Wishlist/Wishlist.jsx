@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useWishList } from "../../Provider/WishlistProvider";
 import "./Wishlist.css";
 import Footer from "../Footer/Footer";
@@ -7,8 +7,7 @@ export default function Wishlist() {
   const {
     wishList,
     getWishListItems,
-    deleteAnItemFromWishList,
-    
+    deleteAnItemFromWishList,    
   } = useWishList();
 
   useEffect(() => {

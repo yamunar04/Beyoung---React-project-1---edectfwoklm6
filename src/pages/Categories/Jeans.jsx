@@ -6,8 +6,6 @@ import ProductCard from "../../components/products/ProductCard";
 import ProductsProvider from "../../Provider/ProductsProvider";
 import { useNavigate } from "react-router-dom"; 
 
-
-
 const Jeans = ({ product_for }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [productsList, setProductsList] = useState([]);

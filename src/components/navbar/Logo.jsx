@@ -3,9 +3,7 @@ import "./Logo.css";
 
 function Logo() {
     return (
-
-            <img className="logo-img" src="https://cdn.lovesavingsgroup.com/logos/beyoung.png" alt="image-Here" />
-
+        <img className="logo-img" src="https://cdn.lovesavingsgroup.com/logos/beyoung.png" alt="image-Here" />
     )
 }
 

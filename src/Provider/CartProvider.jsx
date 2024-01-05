@@ -19,7 +19,7 @@ const CartProvider = ({ children }) => {
         },
       });
       const data = await response.json();
-      console.log(data);
+
       setCartData(data?.data?.items);
       setCartNumber(data?.results);
       setCartTotal(data?.data?.totalPrice);
@@ -62,9 +62,6 @@ const CartProvider = ({ children }) => {
       });
 
       const data = await response.json();
-
-      console.log(data.data);
-
       setCartData(data.data.items);
       setCartTotal(data.data.totalPrice);
     } catch (error) {

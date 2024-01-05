@@ -17,7 +17,6 @@ import SearchResult from "./navbar/SearchResult";
 
 export const cartContext = createContext();
 export const dataContext = createContext();
-// const HomeWithRouter = withRouter(Home);
 
 const App = () => {
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);

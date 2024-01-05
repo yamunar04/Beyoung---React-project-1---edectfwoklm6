@@ -20,7 +20,6 @@ const WomenProductsList = ({ data, nextCall, hasMore, product_for }) => {
 
     useEffect(() => {
         setIsLoading(false);
-        console.log("Hello");
     }, [filter]);
 
     const fetchProducts = async () => {
