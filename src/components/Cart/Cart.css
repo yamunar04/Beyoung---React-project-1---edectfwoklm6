@@ -57,6 +57,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-radius: 0.5rem;
   }
   .cart-total-div button {
     margin-top: 10px;
@@ -66,6 +67,7 @@
     background-color: var(--green-color);
     cursor: pointer;
     text-transform: uppercase;
+    border-radius: 1rem;
   }
   .cart-total-div h4 {
     font-size: 1.25rem;
@@ -78,6 +80,7 @@
     color: black;
     background-color: white;
     cursor: pointer;
+    border-radius: 0.2rem;
   }
   
   .cart-totat-buttons-div {
@@ -95,6 +98,7 @@
     color: black;
     background-color: white;
     cursor: pointer;
+    border-radius: 0.2rem;
   }
 
   @media only screen and (max-width: 575px) {

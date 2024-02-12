@@ -51,7 +51,7 @@
     gap: 1rem;
   }
   .label-top{
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
   .firstSlide {
     background: #f8eb27;
@@ -147,6 +147,7 @@
     align-items: center;
     margin: 2rem;
     flex-direction: column;
+    padding-top: 3rem;
   }
 
   .search-button{
@@ -167,6 +168,9 @@
   .profile-icon{
     margin: 1rem;
     cursor: pointer;
+  }
+  #checkout-main{
+    padding-top: 3rem;
   }
 
   @media screen and (max-width: 575px) {
@@ -203,5 +207,8 @@
     }
     .secondSlide{
       padding: 0.5rem;
+    }
+    #checkout-main{
+      padding-top: 3rem;
     }
   }
