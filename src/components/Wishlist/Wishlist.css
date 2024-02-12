@@ -15,6 +15,7 @@
     align-items: center;
     margin-bottom: 2rem;
     font-size: 2rem;
+    padding-top: 3rem;
   }
   
   .wishlist-card {
@@ -46,6 +47,7 @@
     align-items: center;
     padding-bottom: 10px;
     gap: 0.5rem;
+    margin-top: 1rem;
   }
   
   .wishlist-buttons-div button {
@@ -71,3 +73,8 @@
     border: 1px solid white;
   }
   
+  @media only screen and (max-width: 575px) {
+    .wishlist-h3{
+      padding-top: 3rem;
+    }
+  }

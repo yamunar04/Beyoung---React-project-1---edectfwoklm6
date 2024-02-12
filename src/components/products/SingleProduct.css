@@ -132,18 +132,7 @@
   .single-product-description p {
     font-size: 14px;
   }
-  @media only screen and (max-width: 670px) {
-    .single-product-name h3 {
-      font-size: 1.25rem;
-    }
-    .single-product-price h3 {
-      font-size: 1rem;
-    }
-    .single-product-container {
-      padding: 0 1.5rem;
-    }
-  }
-  
+ 
   .single-product-bottom-div {
     display: flex;
     max-width: 800px;
@@ -167,5 +156,18 @@
   
   .single-product-description {
     max-width: 500px;
+  }
+
+  @media only screen and (max-width: 575px) {
+    .single-product-name h3 {
+      font-size: 1.25rem;
+    }
+    .single-product-price h3 {
+      font-size: 1rem;
+    }
+    .single-product-container {
+      padding: 0 1.5rem;
+      padding-top: 3rem;
+    }
   }
   

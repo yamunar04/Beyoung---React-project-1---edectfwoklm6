@@ -14,6 +14,7 @@ import SingleProduct from "./products/SingleProduct";
 import Wishlist from "./Wishlist/Wishlist";
 import CheckOut from "./CheckOut/CheckOut";
 import SearchResult from "./navbar/SearchResult";
+// import NavbarFrst from "./navbar/NavbarFrst/NavbarFrst";
 
 export const cartContext = createContext();
 export const dataContext = createContext();
@@ -34,9 +35,11 @@ const App = () => {
   return (
     <dataContext.Provider value={{ data, setData, filter, setFilter }}>
       <cartContext.Provider value={{ cart, setCart, userName }}>
+      
         <div className="App">
+          
           <Navbar />
-          <div style={{ marginTop: "6rem" }}></div>
+          <div style={{ marginTop: "8rem" }}></div>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products/:_id" element={<SingleProduct />} />

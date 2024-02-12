@@ -43,6 +43,7 @@
     margin-top: 3rem;
     text-align: center;
     font-size: 2rem;
+    padding-top: 3rem;
   }
   
   .cart-total-div {
@@ -76,6 +77,7 @@
     border: 1px solid white;
     color: black;
     background-color: white;
+    cursor: pointer;
   }
   
   .cart-totat-buttons-div {
@@ -85,19 +87,27 @@
   cart-totat-buttons-clear {
     background-color: var(--red-secondary);
   }
-  @media only screen and (max-width: 700px) {
-    .cart-item-details {
-      width: 100px;
-    }
-    .cart-item-info-name {
-      font-size: 12px;
-    }
-  }
-  
+ 
   .cart-item-checkout-btn{
     width: 100px;
     height: 30px;
     border: 1px solid white;
     color: black;
     background-color: white;
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: 575px) {
+    .cart-item-details {
+      width: 100px;
+    }
+    .cart-item-info-name {
+      font-size: 12px;
+    }
+    .cart-page-h3{
+      padding-top: 3rem;
+    }
+    .cart-item-delete-btn{
+      margin-right: 0.5rem;
+    }
   }

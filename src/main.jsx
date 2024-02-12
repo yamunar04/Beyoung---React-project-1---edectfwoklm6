@@ -12,11 +12,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <UserProvider>
         <CartProvider>
-
             <WishListProvider>
               <App />
             </WishListProvider>
-
         </CartProvider>
       </UserProvider> 
     </BrowserRouter>

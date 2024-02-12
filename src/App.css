@@ -20,7 +20,8 @@
   
   .navbar {
     display: flex;
-    padding: 0.5rem 1rem;
+    flex-direction: column;
+    /* padding: 0.5rem 1rem; */
     border-bottom: 1px solid #b9b9b9;
     align-items: center;
     justify-content: space-evenly;
@@ -32,7 +33,7 @@
     color: black;
     overflow: hidden;
   }
-  .navrbar-container{
+  .navbar-container{
     display: flex;
     flex-direction: column;
   }
@@ -42,7 +43,36 @@
     list-style: none;
     color: black;
   }
-  
+  .navbar-container2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+  }
+  .label-top{
+    margin-top: 2rem;
+  }
+  .firstSlide {
+    background: #f8eb27;
+    padding: 6px 0;
+    font-size: 14px;
+    line-height: 18px;
+    color: #1d1d1d;
+    text-align: center;
+    width: 100%;
+  }
+  .secondSlide{
+    display: flex;
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: 0.5rem;
+  }
+  .secondSlide-icon{
+    margin-left: 3rem;
+    margin-right: 1rem 
+  }
   .link-item {
     display: flex;
     gap: 0.5rem;
@@ -83,7 +113,9 @@
     align-items: center;
     text-align: center;
   }
-   
+  #sign-button{
+    cursor: pointer;
+  }
   input {
     padding: 0.5rem;
     border-radius: 0.25rem;
@@ -132,31 +164,44 @@
   .profile-p{
     font-weight: 600;
   }
+  .profile-icon{
+    margin: 1rem;
+    cursor: pointer;
+  }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 575px) {
     .navbar {
       flex-direction: column;
-      /* align-items: flex-start; */
       display: flex;
     }
-    /* .navrbar-container{
-      display: flex;
-      flex-direction: column;
-    } */
     .nav-links {
-        display: flex;
-      margin-top: 10px;
+        display: none;
     }
   
     .link-item {
-        display: flex;
-      margin-right: 0;
-      margin-bottom: 10px;
+        display: none;   
     }
-  
     .navbar-wishlist,
     .navbar-cart {
         display: flex;
       margin-left: 0;
+    }
+    .navbar-container2{
+      display: flex;
+    }
+    .search-bar{
+      display: none;
+    }
+    #nav-link{
+      display: flex;
+    }
+    .form-section{
+      margin-top: 10rem;
+    }
+    .firstSlide{
+      font-size: 12px;
+    }
+    .secondSlide{
+      padding: 0.5rem;
     }
   }

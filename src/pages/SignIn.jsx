@@ -53,8 +53,8 @@ function SignIn() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="email">Email: </label>
+        <form onSubmit={handleSubmit} className="form-section">
+            <label className="label-top" htmlFor="email">Email: </label>
             <input
                 type="text"
                 id="email"
@@ -70,9 +70,9 @@ function SignIn() {
                 value={userInfo.password}
                 onChange={handleChange}
             />
-            <input type="submit" value='Sign In' />
+            <input type="submit" value='Sign In' id="sign-button"/>
             <p>Don't have an account?</p>
-            <button onClick={() => navigate('/signup')}>SignUp Here</button>
+            <button id="sign-button" onClick={() => navigate('/signup')}>SignUp Here</button>
         </form>
     )
 }

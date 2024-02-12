@@ -55,8 +55,8 @@ function SignUp() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="name">Name: </label>
+        <form onSubmit={handleSubmit} className="form-section">
+            <label className="label-top" htmlFor="name">Name: </label>
             <input
                 type="text"
                 id="name"
@@ -80,9 +80,9 @@ function SignUp() {
                 value={userInfo.password}
                 onChange={handleChange}
             />
-            <input type="submit" value='Sign Up' />
+            <input type="submit" value='Sign Up' id="sign-button"/>
             <p>Already have an account?</p>
-            <button onClick={() => navigate('/signin')}>SignIn Here</button>
+            <button id="sign-button" onClick={() => navigate('/signin')}>SignIn Here</button>
         </form>
     );
 }
