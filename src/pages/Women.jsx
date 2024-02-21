@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 const WomenProductsList = ({ data, nextCall, hasMore, product_for }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [productsList, setProductsList] = useState([]);
+    const [womenProductsList,setWomenProductsList] = useState([]);
     const [filter, setFilter] = useState({
         gender: "Female",
         color: false,
@@ -44,7 +45,10 @@ const WomenProductsList = ({ data, nextCall, hasMore, product_for }) => {
         fetchProducts();
     }, []);
 
-    const womenProductsList = productsList.filter((product) => product.gender === "Women");
+    useEffect(()=>{    
+        setWomenProductsList(productsList.filter((product) => product.gender === "Women"))
+    },[productsList]);
+    
 
     const handleImageClick = (id) => {
         navigate(`/${product_for}/productModal/${id}`);
