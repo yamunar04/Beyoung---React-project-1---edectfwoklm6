@@ -51,11 +51,14 @@
   }
   
   .wishlist-buttons-div button {
-    border: none;
+    /* border: none; */
     outline: none;
     cursor: pointer;
     padding: 5px;
     transition: all ease 0.3s;
+    border: 1px solid black;
+    background: black;
+    color: white;
   }
   
   .wishlist-cart {

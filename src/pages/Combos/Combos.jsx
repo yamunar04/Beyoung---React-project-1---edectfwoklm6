@@ -1,8 +1,8 @@
 import React from "react";
-import "./Kids.css";
+import "./Combos.css";
 import Footer from "../../components/Footer/Footer";
 
-function Kids() {
+function Combos() {
     return (
         <>
             <div className="kids-section">
@@ -15,4 +15,4 @@ function Kids() {
     )
 }
 
-export default Kids;
+export default Combos;

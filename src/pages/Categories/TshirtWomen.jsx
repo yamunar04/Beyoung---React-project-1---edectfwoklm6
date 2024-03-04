@@ -6,7 +6,7 @@ import ProductCard from "../../components/products/ProductCard";
 import ProductsProvider from "../../Provider/ProductsProvider";
 import { useNavigate } from "react-router-dom"; 
 
-const Jeans = ({ product_for }) => {
+const TshirtWomen = ({ product_for }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [productsList, setProductsList] = useState([]);
   
@@ -17,7 +17,7 @@ const Jeans = ({ product_for }) => {
       try {
         setIsLoading(true);
         const response = await axios.get(
-          "https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?filter=%7B%22subCategory%22%3A%22jeans%22%7D&limit=10",
+          "https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?filter={%22subCategory%22:%22tshirt%22,%20%22gender%22:%22Women%22}&limit=100",
           config
         );
         const productsListData = response.data.data;
@@ -58,7 +58,7 @@ const Jeans = ({ product_for }) => {
                     ))}
                   </section>
                 ) : (
-                  <div>No jeans products available.</div>
+                  <div>No products available.</div>
                 )}
               </div>
             </div>
@@ -68,7 +68,7 @@ const Jeans = ({ product_for }) => {
     );
   };
   
-  export default Jeans;
+  export default TshirtWomen;
   
 
 

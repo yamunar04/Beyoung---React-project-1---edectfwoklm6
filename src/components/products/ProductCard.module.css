@@ -6,7 +6,7 @@
     padding: 0.5rem;
     border-radius: 0.25rem;
     flex-wrap: wrap;
-    border: 1px solid white;
+    border: 1px solid black;
     justify-content: center;
     text-align: center;
 }
@@ -20,14 +20,14 @@
 }
 .productCard:hover {
     cursor: pointer;
-    background-color: #1b1b1b;
-    color: white;
+    /* background-color: #1b1b1b; */
+    color: black;
 }
 
 .product-name p{
     font-size: 13px;
     text-align: center;
-    color: white;
+    color: black;
     gap: 2rem;
     margin-right: 2rem;
     display: flex;
@@ -36,7 +36,7 @@
   }
   .product-price h5{
     text-align: left;
-    color: white;
+    color: black;
     font-weight: 700;
     font-size: 15px;
     display: flex;
@@ -56,4 +56,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
+  }
+  #product-images:hover{
+    cursor: pointer;
   }

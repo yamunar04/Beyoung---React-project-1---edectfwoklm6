@@ -4,7 +4,7 @@ import "./Cart.css";
 import { NavLink } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { useNavigate } from "react-router-dom";
-import {useUser} from "../../Provider/UserProvider";
+import { useUser } from "../../Provider/UserProvider";
 
 function Cart(_id) {
   const {
@@ -60,20 +60,21 @@ function Cart(_id) {
               </div>
               <button
                 className="cart-item-delete-btn"
-                onClick={() => deleteAnItemFromCart(cartItem?.product._id)} 
+                onClick={() => deleteAnItemFromCart(cartItem?.product._id)}
               >
                 Delete
               </button>
-              <button
-                className="cart-item-checkout-btn"
-                onClick={handleCheckOutClick}               
-              >
-                CheckOut
-              </button>
+
             </div>
           ))}
       </div>
       <div className="cart-total-div">
+        <button
+          className="cart-item-checkout-btn"
+          onClick={handleCheckOutClick}
+        >
+          CheckOut
+        </button>
         <h4>Grand Total : ₹{cartTotal}</h4>
         <div className="cart-totat-buttons-div">
           <NavLink to="/">

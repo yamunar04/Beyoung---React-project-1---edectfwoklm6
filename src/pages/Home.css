@@ -37,3 +37,58 @@
     align-items: center;
     font-size: 1.5rem;
 }
+.home-image1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+    margin-top: 3rem 
+}
+
+.home-image2{
+    width: 1200px;
+    margin-left: 2rem;
+    margin-top: 2rem 
+}
+.for-men{
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient( 90deg, rgba(248, 235, 39, 0) 0%, #f8eb27 48.11%, rgba(248, 235, 39, 0) 100% );
+    width: 100%;
+    justify-content: center;
+}
+.for-men p {
+    color: #000;
+    font-size: 25px;
+    font-weight: 800;
+    padding: 15px 0px;
+}
+.men-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+.for-women{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient( 90deg, rgba(248, 235, 39, 0) 0%, #f8eb27 48.11%, rgba(248, 235, 39, 0) 100% );
+    width: 100%;
+    justify-content: center;
+}
+.for-women p {
+    color: #000;
+    font-size: 25px;
+    font-weight: 800;
+    padding: 15px 0px;
+}
+.women-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    cursor: pointer;
+}

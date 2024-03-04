@@ -3,10 +3,10 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
-    background-color: #f7f7f7;
+    background-color: black;
     padding: 40px 80px;
     font-size: 14px;
-    color: #777;
+    color: white;
     margin-top: 2rem;
   }
   
@@ -17,7 +17,7 @@
   .footer-links h3 {
     font-size: 16px;
     margin-bottom: 10px;
-    color: #000;
+    color: #ffdd00;
   }
   
   .footer-links ul {
@@ -31,12 +31,12 @@
   }
   
   .footer-links a {
-    color: #777;
+    color: white;
     text-decoration: none;
   }
   
   .footer-links a:hover {
-    color: #000;
+    color: white;
   }
   
   .footer-info {

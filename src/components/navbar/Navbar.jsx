@@ -44,13 +44,13 @@ function Navbar() {
                                 </NavLink>
                             </li>
                             <li className='link-item'>
-                                <NavLink className='nav-links' to='/Kids'>
-                                    Kids
+                                <NavLink className='nav-links' to='/Combos'>
+                                    Combos
                                 </NavLink>
                             </li>
                             <li className='link-item'>
-                                <NavLink className='nav-links' to='/Accessories'>
-                                    Accessories
+                                <NavLink className='nav-links' to='/Joggers'>
+                                    Cargo Joggers
                                 </NavLink>
                             </li>
                         </ul>

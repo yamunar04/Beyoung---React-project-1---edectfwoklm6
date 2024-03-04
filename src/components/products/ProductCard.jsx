@@ -18,6 +18,7 @@ const ProductCard = (props) => {
           alt={name}
           height="150"
           width="150"
+          id="product-images"
           className={style.bannerImg}
           onClick={handleImageClick}
         />
