@@ -1,10 +1,12 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { projectId, apiUrl } from "../helper/apiDetails";
 
 const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
-  const authToken = sessionStorage.getItem("authToken");
+  
+  const authToken = JSON.parse(localStorage.getItem("authToken"));
+  // console.log(authToken);
   
   const [cartData, setCartData] = useState(null);
   const [cartNumber, setCartNumber] = useState(0);
@@ -30,12 +32,16 @@ const CartProvider = ({ children }) => {
   };
 
   const addToCart = async (productId, quantity, size) => {
+    const authToken = JSON.parse(localStorage.getItem("authToken"));
+    
     try {
+      console.log({projectId,authToken,productId,quantity,size,apiUrl})
+      
       const response = await fetch(`${apiUrl}ecommerce/cart/${productId}`, {
         method: "PATCH",
         headers: {
           projectID: projectId,
-          "Content-Type": "application/json",
+          // "Content-Type": "application/json",
           Authorization: `Bearer ${authToken}`,
         },
         body: JSON.stringify({
@@ -43,8 +49,9 @@ const CartProvider = ({ children }) => {
           size: size,
         }),
       });
+      
       const data = await response.json();
-      console.log(data);
+      
     } catch (error) {
       console.log("Error adding product into cart", error);
     }

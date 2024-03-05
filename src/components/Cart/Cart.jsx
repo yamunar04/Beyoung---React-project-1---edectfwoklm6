@@ -26,7 +26,8 @@ function Cart(_id) {
   };
   useEffect(() => {
     getCartData();
-  }, [authTokenData]);
+  }, []);
+  console.log("cart",authTokenData);
 
   return (
     <>

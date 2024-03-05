@@ -34,8 +34,8 @@ function SignUp() {
                 const data = await response.json();
                 const { token, data: { name } } = data;
 
-                sessionStorage.setItem('authToken', token);
-                sessionStorage.setItem('userInfo', JSON.stringify({ name })); 
+                localStorage.setItem('authToken', JSON.stringify(token));
+                localStorage.setItem('userInfo', JSON.stringify(name)); 
                 setAuthTokenData(token);
 
                 signUpContext(token);
@@ -53,7 +53,7 @@ function SignUp() {
         event.preventDefault();
         signUp(userInfo);
     }
-
+    console.log(authTokenData);
     return (
         <form onSubmit={handleSubmit} className="form-section">
             <label className="label-top" htmlFor="name">Name: </label>

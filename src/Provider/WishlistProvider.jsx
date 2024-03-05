@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { projectId, apiUrl } from "../helper/apiDetails";
 
 const WishListContext = createContext();
@@ -6,7 +6,7 @@ const WishListContext = createContext();
 const WishListProvider = ({ children }) => {
   const [wishList, setWishList] = useState([]);
   const [wishListNumber, setWishListNumber] = useState(0);
-  const bearerToken = sessionStorage.getItem("authToken");
+  const authToken = JSON.parse(localStorage.getItem("authToken"));
 
   const deleteAnItemFromWishList = async (id) => {
     try {
@@ -14,7 +14,7 @@ const WishListProvider = ({ children }) => {
         method: "DELETE",
         headers: {
           projectID: projectId,
-          Authorization: `Bearer ${bearerToken}`,
+          Authorization: `Bearer ${authToken}`,
         },
       });
     } catch (error) {
@@ -24,32 +24,34 @@ const WishListProvider = ({ children }) => {
 
 
   const addToWishList = async (productId) => {
+    console.log(productId, projectId, authToken)
     try {
-      const response = await fetch(`${apiUrl}ecommerce/wishlist`, {
+      const response = await fetch(`${apiUrl}ecommerce/wishlist/`, {
         method: "PATCH",
         headers: {
-          "projectID": projectId,
+          projectID: projectId,
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${bearerToken}`,
+          Authorization: `Bearer ${authToken}`,
         },
         body: JSON.stringify({
-          "productId": productId,
+          productId: productId,
         }),
       });
+
     } catch (error) {
       console.log(error);
     }
   };
 
-const getWishListItems = async () => {
+  const getWishListItems = async () => {
     try {
-      const delay = 1000; 
+      const delay = 1000;
       await new Promise(resolve => setTimeout(resolve, delay)); // Introduce delay
-  
+
       const response = await fetch(`${apiUrl}ecommerce/wishlist`, {
         headers: {
           projectID: projectId,
-          Authorization: `Bearer ${bearerToken}`,
+          Authorization: `Bearer ${authToken}`,
         },
       });
       const jsonData = await response.json();
@@ -59,7 +61,7 @@ const getWishListItems = async () => {
       console.log(error);
     }
   };
-  
+
 
   return (
     <WishListContext.Provider
@@ -68,7 +70,7 @@ const getWishListItems = async () => {
         wishList,
         addToWishList,
         getWishListItems,
-        deleteAnItemFromWishList, 
+        deleteAnItemFromWishList,
       }}
     >
       {children}

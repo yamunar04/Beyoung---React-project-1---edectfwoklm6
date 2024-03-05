@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import AddToCart from "../Cart/AddToCart/AddToCart";
 import { useWishList } from "../../Provider/WishlistProvider";
-import { useUser } from "../../Provider/UserProvider";
+// import { useUser } from "../../Provider/UserProvider";
 import { NavLink } from "react-router-dom";
 
 function SingleProduct() {
@@ -12,6 +12,7 @@ function SingleProduct() {
   const [product, setProduct] = useState([]);
   const [mainImage, setMainImage] = useState(0);
   const { _id } = useParams();
+  const authToken = JSON.parse(localStorage.getItem("authToken"));
   const getProduct = async () => {
     const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/product/${_id}`, {
       headers: {
@@ -32,7 +33,8 @@ function SingleProduct() {
     price,
     description
   } = product;
-  const { isUserLoggedIn } = useUser();
+  // const { isUserLoggedIn } = useUser();
+  console.log(_id);
   return (
     <>
       <div className="single-product-container">
@@ -66,7 +68,7 @@ function SingleProduct() {
           <AddToCart product={product} />
           
           <div className="cart-wishlist-btns">
-          <NavLink to= {!isUserLoggedIn && "/signin"}>
+          <NavLink to= {!authToken && "/signin"}>
             <button
               className="single-product-add-to-wishlist-btn"
               onClick={() => addToWishList(_id)}
@@ -88,3 +90,4 @@ function SingleProduct() {
 }
 
 export default SingleProduct;
+

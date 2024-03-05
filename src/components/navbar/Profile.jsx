@@ -10,11 +10,11 @@ function Profile() {
 
     const [showModal, setShowModal] = useState(false);
 
-    let loginUsername = sessionStorage.getItem('userInfo');
+    let loginUsername = localStorage.getItem('userInfo');
 
     function handleSignOut() {
-        sessionStorage.removeItem('userInfo');
-        sessionStorage.removeItem('authToken');
+        localStorage.removeItem('userInfo');
+        localStorage.removeItem('authToken');
         signOutContext();
         navigate('/signin')
     }

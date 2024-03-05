@@ -1,7 +1,7 @@
 import { FaMinus, FaPlus } from "react-icons/fa";
 import "./CartAmountToggle.css";
 import { NavLink } from "react-router-dom";
-import { useUser } from "../../../Provider/UserProvider";
+// import { useUser } from "../../../Provider/UserProvider";
 
 export default function CartAmountToggle({
   amount,
@@ -9,7 +9,8 @@ export default function CartAmountToggle({
   setIncrease,
   handleAddToCartClick,
 }) {
-  const { isUserLoggedIn } = useUser();
+  // const { isUserLoggedIn } = useUser();
+  const authToken = JSON.parse(localStorage.getItem("authToken"));
   return (
     <div>
       <div className="amount-toggle">
@@ -21,7 +22,7 @@ export default function CartAmountToggle({
           <FaPlus />
         </button>
       </div>
-      <NavLink to= {!isUserLoggedIn && "/signin"}>
+      <NavLink to= {!authToken && "/signin"}>
         <button className="addtocart-btn" onClick={handleAddToCartClick}>
           add to cart
         </button>

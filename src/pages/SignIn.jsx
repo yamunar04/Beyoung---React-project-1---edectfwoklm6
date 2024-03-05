@@ -20,7 +20,7 @@ function SignIn() {
             const response = await fetch("https://academics.newtonschool.co/api/v1/user/login", {
                 method: 'POST',
                 headers: {
-                    'projectID': 'edectfwoklm6',
+                    projectID: "edectfwoklm6",
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
@@ -28,14 +28,15 @@ function SignIn() {
                     appType: 'ecommerce',
                 })
             });
-
+            console.log(response);
             if (response.ok) {
                 const data = await response.json();
                 const { token, data: { name } } = data;
 
-                sessionStorage.setItem('authToken', token);
-                sessionStorage.setItem('userInfo', JSON.stringify({ name }));
-                setAuthTokenData(token);
+                localStorage.setItem('authToken', JSON.stringify(token));
+                console.log(token)
+                localStorage.setItem('userInfo', JSON.stringify(name));
+                // setAuthTokenData(token);
 
                 signInContext(token);
                 navigate('/');
