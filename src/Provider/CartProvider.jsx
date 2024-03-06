@@ -31,7 +31,7 @@ const CartProvider = ({ children }) => {
     }
   };
 
-  const addToCart = async (productId, quantity, size) => {
+  const addToCart = async (productId, quantity = 1, size = "S") => {
     const authToken = JSON.parse(localStorage.getItem("authToken"));
     
     try {

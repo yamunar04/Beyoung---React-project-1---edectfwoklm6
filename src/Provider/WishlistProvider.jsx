@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
-import { projectId, apiUrl } from "../helper/apiDetails";
+import { projectId, apiUrl,getAuthHeaderConfig } from "../helper/apiDetails";
+import axios from 'axios';
 
 const WishListContext = createContext();
 
@@ -7,6 +8,7 @@ const WishListProvider = ({ children }) => {
   const [wishList, setWishList] = useState([]);
   const [wishListNumber, setWishListNumber] = useState(0);
   const authToken = JSON.parse(localStorage.getItem("authToken"));
+  const headers = getAuthHeaderConfig();
 
   const deleteAnItemFromWishList = async (id) => {
     try {
@@ -24,24 +26,39 @@ const WishListProvider = ({ children }) => {
 
 
   const addToWishList = async (productId) => {
+    const authToken = JSON.parse(localStorage.getItem("authToken"));
     console.log(productId, projectId, authToken)
+    
     try {
-      const response = await fetch(`${apiUrl}ecommerce/wishlist/`, {
+      const response = await fetch(`${apiUrl}ecommerce/wishlist`, {
         method: "PATCH",
         headers: {
           projectID: projectId,
           "Content-Type": "application/json",
           Authorization: `Bearer ${authToken}`,
+         
         },
         body: JSON.stringify({
           productId: productId,
-        }),
-      });
-
+        }),    
+      });   
+      const data = await response.json();     
     } catch (error) {
       console.log(error);
     }
   };
+  //  const addToWishList = async (body) => {
+  //   // console.log(productId, projectId, authToken)
+    
+  //   try {
+  //     const response = await axios.patch(`${apiUrl}ecommerce/wishlist`, {
+  //       headers,
+  //       body,    
+  //     });        
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const getWishListItems = async () => {
     try {
@@ -83,3 +100,5 @@ export const useWishList = () => {
 };
 
 export default WishListProvider;
+
+
