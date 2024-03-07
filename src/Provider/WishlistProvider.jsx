@@ -62,7 +62,7 @@ const WishListProvider = ({ children }) => {
 
   const getWishListItems = async () => {
     try {
-      const delay = 1000;
+      const delay = 100;
       await new Promise(resolve => setTimeout(resolve, delay)); // Introduce delay
 
       const response = await fetch(`${apiUrl}ecommerce/wishlist`, {
